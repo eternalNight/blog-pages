@@ -3,6 +3,10 @@ date: 2015-04-26 21:40:07
 tags: [maintenance, cheatsheet, gnus]
 ---
 
+![Postfix Session](postfix-session.png)
+
+去年底gmail被封的时候，就有想自己搭mail server的冲动，只是后来没有落实。最近又有了自搭pacman server的需求，所以索性搞了域名和虚拟机，准备好好弄一些自用的服务，邮件自然首当其冲。
+
 # 配置postfix+dovecot
 
 [Linux Mail Server Setup](http://www.linuxmail.info/)上的配置过程已经很详细了，按照How to install SMTP, POP3, IMAP and Webmail一节里几个page的步骤做下来，一个基本的mail server基本就起来了。

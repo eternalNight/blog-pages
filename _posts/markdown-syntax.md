@@ -1,9 +1,9 @@
 title: "Markdown Cheatsheet"
 date: 2015-04-29 20:24:50
-tags:
+tags: [cheatsheet]
 ---
 
-<!-- toc -->
+![Markdown Logo](logo.jpg)
 
 # 基本Markdown语法
 

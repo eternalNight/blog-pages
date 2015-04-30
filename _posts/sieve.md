@@ -3,6 +3,8 @@ date: 2015-04-29 20:08:45
 tags: [maintenance, cheatsheet, gnus]
 ---
 
+![Sieve的Logo（取自sieve.info）](logo.png)
+
 # sieve是什么鬼？
 
 简单来说，Sieve就是个用于定义邮件过滤器的语言，作用和procmail的配置文件类似，算是
