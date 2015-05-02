@@ -1,5 +1,6 @@
 title: "搭建的postfix+dovecot邮件服务器"
 date: 2015-04-26 21:40:07
+category: Techniques
 tags: [maintenance, cheatsheet, gnus]
 ---
 

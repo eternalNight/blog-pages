@@ -1,5 +1,6 @@
 title: "postfix+dovecot上配置sieve"
 date: 2015-04-29 20:08:45
+category: Techniques
 tags: [maintenance, cheatsheet, gnus]
 ---
 

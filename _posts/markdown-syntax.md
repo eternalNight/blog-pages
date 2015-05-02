@@ -1,5 +1,6 @@
 title: "Markdown Cheatsheet"
 date: 2015-04-29 20:24:50
+category: Techniques
 tags: [cheatsheet]
 ---
 
