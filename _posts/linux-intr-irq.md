@@ -140,6 +140,28 @@ IDT就256个表项，所以vector用8位足矣。初始情况下，这些寄存�
 
 每个中断的LVT表项稍稍有点不一样，具体在SDM Vol.3 10.5里都找得到。
 
+那IPI怎么发？lapic还有另外一个64位的寄存器ICR，向ICR的低32位写一次就等于发一次IPI。ICR的格式和ioapic的redirection table（见下）很像：
+
+     63              55              47              39            32
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |  destination  |                                               |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+     31              23              15              7             0
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                       |   |   | |   | | |mode |     vector    |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                              ^      ^     ^ ^
+           dest. shorthand ---+      |     | +--- dest. mode
+                                     |     +--- status
+                                     +--- trigger
+
+* vector：该中断被触发后，ioapic报给lapic的号码，也是lapic报给CPU的物理中断号；
+* (delivery) mode：同样是配置NMI等中断类型；
+* dest. shorthand、dest. mode和destination：指定中断投送的目标CPU，或者指定发送给自己、全体、除自己外全体，详细情况在SDM Vol. 3 10.6节找；
+* (delivery) status：0表示空闲，1表示中断pending；
+* trigger (mode)：0表示边沿触发，1表示电平触发；
+
 ### ioapic
 
 lapic自己的中断清楚了，但事还没完，网卡和显卡们的中断还在ioapic上呢。ioapic的事情SDM已经不灵了，得另外去找82093AA的文档。
@@ -163,7 +185,7 @@ lapic自己的中断清楚了，但事还没完，网卡和显卡们的中断还
 
 * vector：该中断被触发后，ioapic报给lapic的号码，也是lapic报给CPU的物理中断号；
 * (delivery) mode：同样是配置NMI等中断类型；
-* dest.mode和destination：指定中断投送的目标CPU；
+* dest. mode和destination：指定中断投送的目标CPU；
 * (delivery) status：0表示空闲，1表示中断pending；
 * trigger (mode)：0表示边沿触发，1表示电平触发；
 * mask：0表示可用，1表示被屏蔽。
