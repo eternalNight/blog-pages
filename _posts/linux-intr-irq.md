@@ -136,7 +136,7 @@ lapic里有一张叫做Local Vector Table（LVT）的表，其实就是映射到
 * trigger (mode)：0表示边沿触发，1表示电平触发；
 * mask：0表示可用，1表示被屏蔽。
 
-IDT就256个表项，所以vector用8位足矣。初始情况下，这些寄存器的最后八位都是0x10，所以时钟中断的物理中断号默认情况下是32号（逻辑中断号是0），不过你完全可以改LVT，把时钟中断弄到其它中断号上面去。另一个问题是，不是说有了这8位你就可以发NMI甚至page fault了，NMI的话要找那个mode，page fault能不能发不清楚（也没人这么无聊吧……）。
+IDT就256个表项，所以vector用8位足矣。初始情况下，这些寄存器的最后八位都是0x10，所以时钟中断的物理中断号默认情况下是32号（逻辑中断号是0），不过你完全可以改LVT，把时钟中断弄到其它中断号上面去。另一个问题是，不是说有了这8位你就可以发NMI甚至page fault了，发送0到15号中断的尝试会让lapic报错，真要发NMI得要找那个mode。
 
 每个中断的LVT表项稍稍有点不一样，具体在SDM Vol.3 10.5里都找得到。
 
@@ -168,7 +168,7 @@ lapic自己的中断清楚了，但事还没完，网卡和显卡们的中断还
 * trigger (mode)：0表示边沿触发，1表示电平触发；
 * mask：0表示可用，1表示被屏蔽。
 
-vector号仍然是8位，而且严格限制必须在0x10到0xFE之间（page fault别想发了）。ioapic收到中断后，通过PCI，由bridge把消息广播到system bus上，被点名的CPU的lapic就把相应的vector号pending到自己的IRR（一组共256位的寄存器，记录了哪些中断应该交给CPU）里，由lapic“视时机”把中断报给CPU。
+vector号仍然是8位，而且严格限制必须在0x10到0xFE之间（仍然别想法page fault）。ioapic收到中断后，通过PCI，由bridge把消息广播到system bus上，被点名的CPU的lapic就把相应的vector号pending到自己的IRR（一组共256位的寄存器，记录了哪些中断应该交给CPU）里，由lapic“视时机”把中断报给CPU。
 
 ### PCI MSI/MSIX
 
