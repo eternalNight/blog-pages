@@ -1,4 +1,4 @@
-title: "Linux/x86中断处理：OS应该怎么结束中断？"
+title: "Linux/x86中断处理：OS怎么结束中断？"
 date: 2015-05-09 11:18:22
 category: Techniques
 tags: [linux, architecture]
