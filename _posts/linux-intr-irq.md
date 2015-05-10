@@ -20,9 +20,9 @@ tags: [linux, architecture]
                   irq == ?? ==> +------------+
                                 | handle_irq |
                irq_chip      +--|    chip    |        irqaction
-            +------------+<--+  |   action   | ---> +-----------+  +->+-----------+  +-> ......
+            +------------+<--+  |   action   | ---> +-----------+  +->+-----------+  +-> ...
             |  irq_mask  |      |    name    |      |  handler  |  |  |  handler  |  |
-            | irq_unmask |	    .            .      | thread_fn |  |  | thread_fn |  |
+            | irq_unmask |      .            .      | thread_fn |  |  | thread_fn |  |
             .            .      .            .      |   next    |--+  |   next    |--+
             .            .                          .           .     .           .
 
@@ -47,7 +47,7 @@ ENTRY(irq_entries_start)
         INTR_FRAME
     vector=FIRST_EXTERNAL_VECTOR
     .rept (FIRST_SYSTEM_VECTOR - FIRST_EXTERNAL_VECTOR)
-        pushq_cfi $(~vector+0x80)       /* Note: always in signed byte range */
+        pushq_cfi $(~vector+0x80)    /* Note: always in signed byte range */
     vector=vector+1
         jmp     common_interrupt
         CFI_ADJUST_CFA_OFFSET -8
@@ -231,12 +231,12 @@ vector号仍然是8位，而且严格限制必须在0x10到0xFE之间（仍然�
 
 x86就有架构相关部分默默处理掉的中断，比如LAPIC时钟。虽说LAPIC时钟中断默认是0x20，但在__setup_APIC_LVTT里就把它改成0xEF了，而0xEF的IDT表项又在apic_intr_init中专门设成了apic_timer_interrupt，而不是irq_entries_start那张表里的通用入口。所以要是在/proc/interrupts里看到这么一行：
 
-             CPU0       CPU1       CPU2       CPU3       CPU4       CPU5       CPU6       CPU7
-    0:        134          0          0          0          0          0          0          0   IO-APIC-edge      timer
+             CPU0       CPU1       CPU2       CPU3
+    0:        134          0          0          0   IO-APIC-edge      timer
 
 这货才不是运行时的时钟（不排除系统启动的时候暂时用过它）！真正的时钟应该是：
 
-    LOC:  919608278  869138540  868188298  901247206  888502668  836678414  818929513  872766685   Local timer interrupts
+    LOC:  919608278  869138540  868188298  901247206   Local timer interrupts
 
 ## /proc/irq/*
 

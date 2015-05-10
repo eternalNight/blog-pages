@@ -96,7 +96,7 @@ msi保存中断当前状态的方式和ioapic很类似，在配置寄存器里�
 
 关键在下面这段代码：
 
-'''
+```
 static void ioapic_register_intr(unsigned int irq, struct irq_cfg *cfg,
                                  unsigned long trigger)
 {
@@ -120,7 +120,7 @@ static void ioapic_register_intr(unsigned int irq, struct irq_cfg *cfg,
         irq_set_chip_and_handler_name(irq, chip, hdl,
                                       fasteoi ? "fasteoi" : "edge");
 }
-'''
+```
 
 这是注册ioapic中断时必须调用的一个函数，其中fasteoi决定了使用哪种类型的中断，fasteoi的取值又取决于trigger是不是IOAPIC_LEVEL。换句话说，就是电平触发用fasteoi，边沿触发用edge。
 
