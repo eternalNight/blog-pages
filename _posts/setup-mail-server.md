@@ -54,6 +54,10 @@ CentOS里的squirrelmail默认会把http来的请求重定向到https，所以�
     > set type=mx
     > your_mail_addr.your_mail_domain
 
+【2015-05-16更新】查找特定record的命令行参数是-q：
+
+    $ nslookup -q=mx your_mail_addr.your_mail_domain
+
 # 用telnet/openssl测试邮件服务器
 
 ## SMTP
