@@ -1,4 +1,4 @@
-title: "《GEB》第二轮阅读笔记（一）：三部创意曲与WU谜题"
+title: "《GEB》第二轮阅读笔记（一）：三部创意曲 & WU谜题"
 date: 2015-05-12 21:20:14
 category: Reading
 tags: [GEB]
