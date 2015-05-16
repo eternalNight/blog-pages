@@ -4,7 +4,7 @@ category: Techniques
 tags: [maintenance, cheatsheet]
 ---
 
-![SPF Logo](spf-logo.png)
+![SPF Logo](spf-logo.jpg)
 
 （图片来源：http://www.openspf.org/Logo）
 
