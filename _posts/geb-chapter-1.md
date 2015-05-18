@@ -4,9 +4,9 @@ category: Reading
 tags: [GEB]
 ---
 
-![Castle in the Air](castle-in-the-air.jpg)
+![WU有定理性也无？](thumbnail.jpg)
 
-（Castle in the Air，埃舍尔作，来源：http://www.mcescher.com/ 。这里的城堡比喻从公理开始展开的形式系统定理生成树，而城堡悬在空中则隐喻形式系统的判定过程并非显而易见，有时甚至可望而不可求。）
+（原图为《GEB》图11）
 
 # 三部创意曲
 
