@@ -6,7 +6,7 @@ tags: [maintenance, cheatsheet]
 
 ![SPF Logo](spf-logo.jpg)
 
-（图片来源：http://www.openspf.org/Logo）
+(图片来源：http://www.openspf.org/Logo)
 
 最近发到outlook.com和live.com的邮件被各种退回，理由是550 OU-002（与内容包含垃圾邮件特征或 IP 地址/域信誉相关……⊙_⊙）查了一下，可能和SPF有关系，于是匆忙补课……
 

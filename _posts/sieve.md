@@ -4,7 +4,9 @@ category: Techniques
 tags: [maintenance, cheatsheet, gnus]
 ---
 
-![Sieve的Logo（取自sieve.info）](logo.png)
+![Sieve的Logo](logo.png)
+
+(图片来源：http://sieve.info)
 
 # sieve是什么鬼？
 

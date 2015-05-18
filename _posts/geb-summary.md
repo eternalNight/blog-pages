@@ -6,7 +6,7 @@ tags: [GEB]
 
 ![](cover.jpg)
 
-（《GEB》原版封面配图。上图是Eric Dehais的重绘，来源：http://www.riverrundesign.com/art-of-the-day-godel-escher-bach/）
+(《GEB》原版封面配图。上图是Eric Dehais的重绘，来源：http://www.riverrundesign.com/art-of-the-day-godel-escher-bach/)
 
 自上月中旬至今，粗略地将《哥德尔 艾舍尔 巴赫》（商务中译版，以下简称《GEB》）这本近千页的大部头翻了一遍，顺着作者的文字，如一叶扁舟泛游于各种学科理论与艺术形式之间，似有所得，但一细推敲，又都不甚清楚。虽大有迫不及待从头温故之感，但如此下去，难免仍是管中窥豹，不见全体……
 
