@@ -1,5 +1,5 @@
 title: "《GEB》读书会：导言"
-date: 2015-05-22 23:16:50
+date: 2015-05-20 23:16:50
 category: Reading
 tags: [GEB, Book Club]
 ---
