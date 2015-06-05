@@ -15,7 +15,7 @@ tags: [GEB, Book Club]
 
 然后这两层相继作用，使得任意的纹道模式与唱机震颤之间产生了同构，进而纹道模式有了第二层较为隐含的意义，blablabla……
 
-等一下！同构就一定有传递性了？传递性可不是一个平凡的属性，为什么我们可以默认同构有传递性？
+等一下！同构关系就一定有传递性了？传递性可不是一个平凡的属性，为什么我们可以默认同构关系有传递性？
 
 # 数学里的同构
 
@@ -25,9 +25,9 @@ tags: [GEB, Book Club]
 
 举例来说，在“集合”这个范畴里，对象是所有可能的集合，态射是一个将一个集合中的所有元素映射到另一个集合中的某些元素的函数。很多抽象代数结构的范畴会以“集合”为基础，为其对象增加一些部件，或者对态射进行一些限制。一个典型的例子是范畴“群”，其对象包括一个集合再加上一个二元运算，态射则被限制在“同态映射”（homomorphism），前者是对“集合”对象的扩展，后者是对“集合”态射的限制。
 
-在范畴论里，**同构**是一种特殊的态射。对于一个态射 {% math f: A \rightarrow B %} ，如果可以找到另一个态射 {% math g: B \rightarrow A %} ，使得 {% math f \circ g %} 和 {% math g \circ f %} 都是恒等映射（这时候 {% math g %} 也可以写作 {% math f^{-1} %} ，也就是 {% math f %} 的逆“态射”），那么 {% math f %} 就是一个**同构**（当然 {% math g %} 也是）。
+在范畴论里，**同构**是一种特殊的态射（Isomorphism），也是一个对象与对象之间的关系（Isomorphic）。对态射 {% math f: A \rightarrow B %} 而言，如果可以找到另一个态射 {% math g: B \rightarrow A %} ，使得 {% math f \circ g %} 和 {% math g \circ f %} 都是恒等映射（这时候 {% math g %} 也可以写作 {% math f^{-1} %} ，也就是 {% math f %} 的逆“态射”），那么 {% math f %} 就是一个**同构**（当然 {% math g %} 也是）。如果两个对象 {% math A %} 和 {% math B %} 之间可以找到一个**同构** {% math f: A \rightarrow B %} ，那么就说 {% math A %} 和 {% math B %} 是**同构**的。下文中，**同构**的具体含义依其上下文而定。
 
-根据**同构**的定义，我们就已经可以证明它的传递性了。如果 {% math f: A \rightarrow B %} 和 {% math g: B \rightarrow C %} 都是**同构**，换句话说 {% math f^{-1}: B \rightarrow A %} 和 {% math g^{-1} : C \rightarrow B %} 都存在，那么我们构造 {% math h = g \circ f : A \rightarrow C %} 和 {% math h' = f^{-1} \circ g^{-1} : C \rightarrow A %} ，显然 {% math h %} 和 {% math h' %} 互为逆态射。既然如此，那么用A到B的**同构**和B到C的**同构**所建立的从A到C的**同构**，其正确性就是被严格保证的，如果这些**同构**还满足其它性质的话，这些性质也自然可以被一并传递…
+根据**同构**的定义，我们就已经可以证明它的可结合性（对态射而言）和传递性（对对象而言）了。如果 {% math f: A \rightarrow B %} 和 {% math g: B \rightarrow C %} 都是**同构**，换句话说 {% math f^{-1}: B \rightarrow A %} 和 {% math g^{-1} : C \rightarrow B %} 都存在，那么我们构造 {% math h = g \circ f : A \rightarrow C %} 和 {% math h' = f^{-1} \circ g^{-1} : C \rightarrow A %} ，显然 {% math h %} 和 {% math h' %} 互为逆态射。既然如此，那么用A到B的**同构**和B到C的**同构**所建立的从A到C的**同构**，其正确性就是被严格保证的，如果这些**同构**还满足其它性质的话，这些性质也自然可以被一并传递…
 
 # 找空子
 
