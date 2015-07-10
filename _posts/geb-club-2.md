@@ -1,5 +1,5 @@
 title: "《GEB》读书会（二）：形式系统的能力"
-date: 2015-05-20 20:52:50
+date: 2015-06-13 20:52:50
 category: Reading
 tags: [GEB, Book Club]
 ---
